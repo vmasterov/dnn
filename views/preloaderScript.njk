@@ -1,0 +1,11 @@
+<script>
+  const githubButton = document.getElementsByClassName('github-button')[0]
+  const preloader = document.getElementsByClassName('preloader-layout')[0]
+
+  githubButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    preloader.classList.add('active');
+    const id = githubButton.dataset.github_id;
+    window.location = `https://github.com/login/oauth/authorize?client_id=${id}`
+  });
+</script>

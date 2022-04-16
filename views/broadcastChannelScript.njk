@@ -1,0 +1,9 @@
+<script>
+  // Logout all tabs: send
+  const logoutChannel = new BroadcastChannel("logoutChannel");
+  logoutChannel.postMessage("logout");
+
+  // Login all tabs: receive
+  const loginChannel = new BroadcastChannel("loginChannel");
+  loginChannel.onmessage = () => window.location.reload();
+</script>

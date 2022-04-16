@@ -1,0 +1,33 @@
+{% extends "_layout.njk" %}
+
+{% block style %}
+<style>
+  .page404 {
+    margin-top: 80px;
+    text-align: center;
+  }
+
+  .page404-h {
+    font-weight: bold;
+  }
+
+  .page404 h1 {
+    font-size: 7.625rem;
+  }
+
+  .page404 h2 {
+      margin-top: 20px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+  <div class="page404">
+    <h1 class="page404-h">404</h1>
+    <h2 class="page404-h">Page not found</h2>
+
+    <h3 class="page404-h">
+      <a href="/">Вернуться на главную страницу</a>
+    </h3>
+  </div>
+{% endblock %}
