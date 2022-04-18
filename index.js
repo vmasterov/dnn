@@ -38,7 +38,7 @@ app.use(page404);
 
 app.use(globalErrorHandler);
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
   logger.info(`Listening on http://localhost:${port}`);
