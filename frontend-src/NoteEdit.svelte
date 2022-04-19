@@ -55,7 +55,7 @@
 {#await fetching}
   <Progress />
 {:then _}
-  <div class="uk-margin-bottom">
+  <div class="uk-margin-bottom buttons">
     <button on:click={save} class="uk-button uk-button-primary"><i class="fas fa-save" />&nbsp;Сохранить</button>
     <button on:click={cancel} class="uk-button uk-button-default"><i class="fas fa-undo" />&nbsp;Отмена</button>
   </div>
@@ -74,3 +74,13 @@
     <p>Ошибка: {error.message}.</p>
   </div>
 {/await}
+
+<style>
+@media (max-width: 767px) {
+  .buttons button {
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+  }
+}
+</style>

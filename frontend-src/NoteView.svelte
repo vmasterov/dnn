@@ -58,7 +58,7 @@
   <Progress />
 {:then entry}
   <h1>{entry.title}</h1>
-  <div class="uk-margin-bottom">
+  <div class="uk-margin-bottom buttons">
     {#if entry.is_archive }
       <button on:click={doDelete} class="uk-button uk-button-default"><i class="fas fa-trash" />&nbsp;Удалить</button>
       <button on:click={doUnarchive} class="uk-button uk-button-default"><i class="fas fa-archive" />&nbsp;Восстановить</button>
@@ -97,3 +97,14 @@
     <p>Ошибка: {errorMessage}.</p>
   </div>
 {/if}
+
+<style>
+@media (max-width: 767px) {
+  .buttons button,
+  .buttons a {
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+  }
+}
+</style>

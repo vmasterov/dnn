@@ -40,7 +40,7 @@
   };
 </script>
 
-<div class="uk-margin-bottom">
+<div class="uk-margin-bottom buttons">
   <button on:click={save} class="uk-button uk-button-primary"><i class="fas fa-save" />&nbsp;Сохранить</button>
   <button on:click={cancel} class="uk-button uk-button-default"><i class="fas fa-undo" />&nbsp;Отмена</button>
 </div>
@@ -54,3 +54,13 @@
 <div class="uk-margin"><input bind:value={title} class="uk-input" type="text" placeholder="Заголовок" /></div>
 
 <div class="uk-margin"><textarea bind:this={textarea} class="uk-textarea" /></div>
+
+<style>
+@media (max-width: 767px) {
+  .buttons button {
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+  }
+}
+</style>

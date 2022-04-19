@@ -113,10 +113,20 @@
         break;
     }
   };
+
+  const clickHandler = (id) => {
+    const scrollDiv = document.getElementById(id).offsetTop;
+    window.scrollTo({ top: scrollDiv - 50, behavior: 'smooth'});
+  };
 </script>
 
-<section class="uk-flex uk-grid-collapse">
-  <aside class="uk-width-1-4 uk-padding-small">
+<section class="main-nav">
+  <div class="item-nav" on:click={() => clickHandler("nav")}>Навигация</div>
+  <div class="item-nav" on:click={() => clickHandler("note")}>Заметка</div>
+</section>
+
+<section class="uk-flex uk-grid-collapse uk-flex-mobile">
+  <aside id="nav" class="uk-width-1-4 uk-padding-small nav">
     {#if age !== 'archive'}
       {#if activeNoteId === 'new'}
         <button disabled class="uk-button uk-button-primary uk-display-block uk-width-1-1">Новая заметка</button>
@@ -173,7 +183,7 @@
       </div>
     {/if}
   </aside>
-  <div class="uk-width-3-4 uk-padding-small">
+  <div id="note" class="uk-width-3-4 uk-padding-small content">
     <Router
       {routes}
       prefix={routerPrefix}
@@ -183,3 +193,38 @@
       }} />
   </div>
 </section>
+
+<style>
+.main-nav {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .main-nav {
+    position: sticky;
+    top: 0;
+    margin-top: 20px;
+    display: flex;
+    z-index: 10;
+    background-color: #f8f8f8;
+  }
+
+  .item-nav {
+    width: 50%;
+    padding: 10px 0;
+    text-align: center;
+    color: #1e87f0;
+  }
+
+  .uk-flex-mobile {
+    display: block;
+  }
+
+  .nav,
+  .content {
+    margin: 20px 0;
+    padding: 0;
+    width: 100%;
+  }
+}
+</style>
